@@ -1,0 +1,26 @@
+Pulse — Copyright (c) 2026 theLabX. Licensed under the MIT License (see LICENSE).
+
+Third-party components:
+  * github.com/projectdiscovery/wappalyzergo v0.2.96 — MIT License,
+    Copyright (c) 2021 ProjectDiscovery, Inc. Used for -tech-detect.
+    Vendored and modified in internal/tech (see internal/tech/LICENSE.md):
+    a literal prefilter (internal/tech/prefilter.go) skips regexes that
+    cannot match; detections are unchanged (differential test against the
+    unmodified upstream in internal/tech/prefilter_test.go).
+  * github.com/projectdiscovery/cdncheck v1.2.51 — MIT License,
+    Copyright (c) 2021 ProjectDiscovery, Inc. Only its IP range data
+    (sources_data.json: cdn, waf, cloud) is used, normalized and embedded as
+    internal/cdn/ranges.json.gz (see internal/cdn/LICENSE-cdncheck.md and
+    internal/cdn/gen). No cdncheck code is included.
+  * github.com/andybalholm/brotli v1.2.0 — MIT License, Copyright (c) 2009, 2010,
+    2013-2016 by the Brotli Authors. Brotli response decoding.
+  * github.com/klauspost/compress v1.18.2 (zstd, fse, huff0, internal/snapref,
+    internal/cpuinfo, internal/le)
+    — BSD-3-Clause, Copyright (c) 2012 The Go Authors, Copyright (c) 2019
+    Klaus Post; its zstd/internal/xxhash — MIT License, Copyright (c) 2016
+    Caleb Spare. Zstandard response decoding. (The repository's Apache-2.0
+    parts, e.g. gzhttp, are not linked.)
+  * github.com/refraction-networking/utls v1.8.2 — BSD-3-Clause, Copyright
+    (c) 2009 The Go Authors (uTLS authors' modifications). -tls-impersonate.
+  * golang.org/x/net, golang.org/x/text, golang.org/x/crypto, golang.org/x/sys
+    — BSD-3-Clause, Copyright The Go Authors.

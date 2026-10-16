@@ -1,0 +1,8 @@
+/dist/
+/pulse
+*.prof
+*.cpu
+/output/
+/pulse-ci
+__pycache__/
+*.pyc
