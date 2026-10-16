@@ -80,14 +80,28 @@ mkdir -p ~/.local/bin && chmod +x pulse_*_linux_amd64 && mv pulse_*_linux_amd64 
 go install github.com/theLabXHQ/pulse/cmd/pulse@latest
 ```
 
+The binary goes to `$(go env GOPATH)/bin` (usually `~/go/bin`); add it to your `PATH` if `pulse` is
+not found.
+
 **Source**:
 
 ```sh
 git clone https://github.com/theLabXHQ/pulse.git
 cd pulse
-make build    # ./pulse
-make dist     # binaries for every platform + SHA256SUMS in dist/
+make build    # builds ./pulse for this machine
+./pulse -h
 ```
+
+To run it as plain `pulse` from anywhere, put it on your `PATH`:
+
+```sh
+sudo mv pulse /usr/local/bin/
+```
+
+On Windows, without `make`: `go build -trimpath -o pulse.exe ./cmd/pulse`, then move `pulse.exe` to a
+folder on your `PATH`.
+
+`make dist` is only for releases: it cross-compiles all six platforms into `dist/`.
 
 # Usage
 
